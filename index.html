@@ -3,47 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>HKS Corp - Training & Development</title>
     <style>
-        .board {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .tile {
-            width: 100px;
-            height: 100px;
-            border: 2px solid #333;
-            font-size: 24px;
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .services {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .service {
+            background-color: #f9f9f9;
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(45% - 40px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .service h2 {
+            color: #4CAF50;
+        }
+        .service p {
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .service {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="board" id="board"></div>
-    <script>
-        const board = document.getElementById('board');
-        const tiles = Array.from({ length: 9 }, (_, i) => {
-            const tile = document.createElement('div');
-            tile.classList.add('tile');
-            tile.dataset.index = i;
-            tile.addEventListener('click', handleTileClick);
-            board.appendChild(tile);
-            return tile;
-        });
-
-        let currentPlayer = 'X';
-
-        function handleTileClick(event) {
-            const tile = event.target;
-            if (!tile.textContent) {
-                tile.textContent = currentPlayer;
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            }
-        }
-    </script>
+    <header>
+        <h1>HKS Corp</h1>
+        <p>Training & Development Solutions</p>
+    </header>
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="services">
+            <div class="service">
+                <h2>New Hire Training</h2>
+                <p>Welcome your new employees with comprehensive training programs designed to get them up to speed quickly and effectively.</p>
+            </div>
+            <div class="service">
+                <h2>Role Readiness Training</h2>
+                <p>Ensure your team members are fully prepared for their roles with targeted training that aligns with their responsibilities and goals.</p>
+            </div>
+            <div class="service">
+                <h2>Capability Development Training</h2>
+                <p>Enhance your employees' skills and capabilities with advanced training programs that foster professional growth and development.</p>
+            </div>
+            <div class="service">
+                <h2>Performance Coaching</h2>
+                <p>Boost performance and productivity with personalized coaching that focuses on individual strengths and areas for improvement.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 HKS Corp. All rights reserved.</p>
+    </footer>
 </body>
 </html>
