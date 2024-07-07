@@ -13,11 +13,24 @@
             color: #333;
         }
         header {
-            background-color: #0078d4;
+            background: linear-gradient(90deg, #0078d4, #6a0dad, #ff4500, #ffd700);
             color: white;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header img {
+            height: 50px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
         }
         .container {
             width: 90%;
@@ -43,8 +56,8 @@
             flex: 1 1 calc(45% - 40px);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            cursor: pointer;
             transition: background-color 0.3s;
+            text-align: center;
         }
         .service:hover {
             background-color: #d4d4d4;
@@ -52,8 +65,13 @@
         .service h2 {
             color: #0078d4;
         }
-        .service p {
-            color: #666;
+        .service a {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .service a:hover {
+            text-decoration: underline;
         }
         footer {
             background-color: #333;
@@ -69,92 +87,42 @@
                 flex: 1 1 100%;
             }
         }
-        .details {
-            display: none;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #f4f4f4;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .details h3 {
-            color: #0078d4;
-        }
     </style>
-    <script>
-        function toggleDetails(serviceId) {
-            var details = document.getElementById(serviceId);
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1>HKS Corp</h1>
-        <p>Training & Development Solutions</p>
+        <img src="https://via.placeholder.com/150x50.png?text=HKS+Corp+Logo" alt="HKS Corp Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="new-hire-training.html">New Hire Training</a>
+            <a href="role-readiness-training.html">Role Readiness Training</a>
+            <a href="capability-development-training.html">Capability Development Training</a>
+            <a href="performance-coaching.html">Performance Coaching</a>
+        </nav>
     </header>
     <div class="container">
-        <h1>Our Services</h1>
+        <h1>Welcome to HKS Corp</h1>
+        <p>Providing top-notch training and development solutions.</p>
         <div class="services">
-            <div class="service" onclick="toggleDetails('newHireTraining')">
+            <div class="service">
                 <h2>New Hire Training</h2>
                 <p>Comprehensive training programs for new employees.</p>
-                <div class="details" id="newHireTraining">
-                    <h3>New Hire Training Details</h3>
-                    <ul>
-                        <li>Company Overview and Culture</li>
-                        <li>Role-Specific Training</li>
-                        <li>Compliance and Safety Training</li>
-                        <li>Introduction to Tools and Systems</li>
-                        <li>Team Integration Activities</li>
-                    </ul>
-                </div>
+                <a href="new-hire-training.html">Learn More</a>
             </div>
-            <div class="service" onclick="toggleDetails('roleReadinessTraining')">
+            <div class="service">
                 <h2>Role Readiness Training</h2>
                 <p>Preparation programs for specific roles and responsibilities.</p>
-                <div class="details" id="roleReadinessTraining">
-                    <h3>Role Readiness Training Details</h3>
-                    <ul>
-                        <li>Job Function Training</li>
-                        <li>Performance Expectations</li>
-                        <li>Skill Enhancement Workshops</li>
-                        <li>Mentorship Programs</li>
-                        <li>Practical Simulations and Case Studies</li>
-                    </ul>
-                </div>
+                <a href="role-readiness-training.html">Learn More</a>
             </div>
-            <div class="service" onclick="toggleDetails('capabilityDevelopmentTraining')">
+            <div class="service">
                 <h2>Capability Development Training</h2>
                 <p>Advanced training programs for skill and capability enhancement.</p>
-                <div class="details" id="capabilityDevelopmentTraining">
-                    <h3>Capability Development Training Details</h3>
-                    <ul>
-                        <li>Advanced Technical Skills</li>
-                        <li>Leadership and Management Training</li>
-                        <li>Communication and Collaboration Workshops</li>
-                        <li>Continuous Learning Programs</li>
-                        <li>Innovation and Creativity Sessions</li>
-                    </ul>
-                </div>
+                <a href="capability-development-training.html">Learn More</a>
             </div>
-            <div class="service" onclick="toggleDetails('performanceCoaching')">
+            <div class="service">
                 <h2>Performance Coaching</h2>
                 <p>Personalized coaching to enhance performance and productivity.</p>
-                <div class="details" id="performanceCoaching">
-                    <h3>Performance Coaching Details</h3>
-                    <ul>
-                        <li>Individual Performance Assessment</li>
-                        <li>Goal Setting and Action Plans</li>
-                        <li>Feedback and Development Sessions</li>
-                        <li>Stress Management Techniques</li>
-                        <li>Career Progression Guidance</li>
-                    </ul>
-                </div>
+                <a href="performance-coaching.html">Learn More</a>
             </div>
         </div>
     </div>
