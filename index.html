@@ -6,16 +6,18 @@
     <title>HKS Corp - Training & Development</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f6f9;
+            color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #0078d4;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .container {
             width: 90%;
@@ -23,11 +25,11 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #0078d4;
         }
         .services {
             display: flex;
@@ -35,15 +37,20 @@
             justify-content: space-around;
         }
         .service {
-            background-color: #f9f9f9;
+            background-color: #e1e1e1;
             margin: 10px;
             padding: 20px;
             flex: 1 1 calc(45% - 40px);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .service:hover {
+            background-color: #d4d4d4;
         }
         .service h2 {
-            color: #4CAF50;
+            color: #0078d4;
         }
         .service p {
             color: #666;
@@ -62,7 +69,28 @@
                 flex: 1 1 100%;
             }
         }
+        .details {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .details h3 {
+            color: #0078d4;
+        }
     </style>
+    <script>
+        function toggleDetails(serviceId) {
+            var details = document.getElementById(serviceId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -72,21 +100,61 @@
     <div class="container">
         <h1>Our Services</h1>
         <div class="services">
-            <div class="service">
+            <div class="service" onclick="toggleDetails('newHireTraining')">
                 <h2>New Hire Training</h2>
-                <p>Welcome your new employees with comprehensive training programs designed to get them up to speed quickly and effectively.</p>
+                <p>Comprehensive training programs for new employees.</p>
+                <div class="details" id="newHireTraining">
+                    <h3>New Hire Training Details</h3>
+                    <ul>
+                        <li>Company Overview and Culture</li>
+                        <li>Role-Specific Training</li>
+                        <li>Compliance and Safety Training</li>
+                        <li>Introduction to Tools and Systems</li>
+                        <li>Team Integration Activities</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service">
+            <div class="service" onclick="toggleDetails('roleReadinessTraining')">
                 <h2>Role Readiness Training</h2>
-                <p>Ensure your team members are fully prepared for their roles with targeted training that aligns with their responsibilities and goals.</p>
+                <p>Preparation programs for specific roles and responsibilities.</p>
+                <div class="details" id="roleReadinessTraining">
+                    <h3>Role Readiness Training Details</h3>
+                    <ul>
+                        <li>Job Function Training</li>
+                        <li>Performance Expectations</li>
+                        <li>Skill Enhancement Workshops</li>
+                        <li>Mentorship Programs</li>
+                        <li>Practical Simulations and Case Studies</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service">
+            <div class="service" onclick="toggleDetails('capabilityDevelopmentTraining')">
                 <h2>Capability Development Training</h2>
-                <p>Enhance your employees' skills and capabilities with advanced training programs that foster professional growth and development.</p>
+                <p>Advanced training programs for skill and capability enhancement.</p>
+                <div class="details" id="capabilityDevelopmentTraining">
+                    <h3>Capability Development Training Details</h3>
+                    <ul>
+                        <li>Advanced Technical Skills</li>
+                        <li>Leadership and Management Training</li>
+                        <li>Communication and Collaboration Workshops</li>
+                        <li>Continuous Learning Programs</li>
+                        <li>Innovation and Creativity Sessions</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service">
+            <div class="service" onclick="toggleDetails('performanceCoaching')">
                 <h2>Performance Coaching</h2>
-                <p>Boost performance and productivity with personalized coaching that focuses on individual strengths and areas for improvement.</p>
+                <p>Personalized coaching to enhance performance and productivity.</p>
+                <div class="details" id="performanceCoaching">
+                    <h3>Performance Coaching Details</h3>
+                    <ul>
+                        <li>Individual Performance Assessment</li>
+                        <li>Goal Setting and Action Plans</li>
+                        <li>Feedback and Development Sessions</li>
+                        <li>Stress Management Techniques</li>
+                        <li>Career Progression Guidance</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
